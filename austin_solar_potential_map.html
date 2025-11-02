@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_860edb9f1bb4ca736cd16a72f02098ff {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed;
+     bottom: 40px; left: 40px; width: 140px; height: 120px;
+     background-color: white; border:2px solid grey; z-index:9999;
+     font-size:14px;">
+&nbsp;<b>Solar Potential</b><br>
+&nbsp;<i class="fa fa-circle" style="color:lightgray"></i>&nbsp;Low<br>
+&nbsp;<i class="fa fa-circle" style="color:orange"></i>&nbsp;Medium<br>
+&nbsp;<i class="fa fa-circle" style="color:red"></i>&nbsp;High
+</div>
+    
+            <div class="folium-map" id="map_860edb9f1bb4ca736cd16a72f02098ff" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_860edb9f1bb4ca736cd16a72f02098ff = L.map(
+                "map_860edb9f1bb4ca736cd16a72f02098ff",
+                {
+                    center: [30.2672, -97.7431],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b8e29599c5b2623b46ee036534490d68 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b8e29599c5b2623b46ee036534490d68.addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+            var circle_marker_63d35ac4357ba0b3c1b8c09b3f2357b8 = L.circleMarker(
+                [30.24210802376947, -97.81869235303104],
+                {"bubblingMouseEvents": true, "color": "lightgray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_97ee94a38a0baf23358d3ca340770291 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_78ee369e98ac85590be2101481efc04b = $(`<div id="html_78ee369e98ac85590be2101481efc04b" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Low<br><b>Irradiance:</b> 6.38 kWh/m²/day<br><b>Cloud Cover:</b> 56.2%<br><b>NDBI:</b> 0.65<br><b>NDVI:</b> 0.36<br><b>Elevation:</b> 275.4 m</div>`)[0];
+                popup_97ee94a38a0baf23358d3ca340770291.setContent(html_78ee369e98ac85590be2101481efc04b);
+            
+        
+
+        circle_marker_63d35ac4357ba0b3c1b8c09b3f2357b8.bindPopup(popup_97ee94a38a0baf23358d3ca340770291)
+        ;
+
+        
+    
+    
+            var circle_marker_c21f5f9a7569290606981b94202aabb7 = L.circleMarker(
+                [30.357342861281982, -97.74406461797774],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_c721302128f17004d985587766ed802d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b367577c7bedd608fda5c76e2873f905 = $(`<div id="html_b367577c7bedd608fda5c76e2873f905" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Medium<br><b>Irradiance:</b> 6.41 kWh/m²/day<br><b>Cloud Cover:</b> 36.8%<br><b>NDBI:</b> 0.26<br><b>NDVI:</b> 0.54<br><b>Elevation:</b> 232.2 m</div>`)[0];
+                popup_c721302128f17004d985587766ed802d.setContent(html_b367577c7bedd608fda5c76e2873f905);
+            
+        
+
+        circle_marker_c21f5f9a7569290606981b94202aabb7.bindPopup(popup_c721302128f17004d985587766ed802d)
+        ;
+
+        
+    
+    
+            var circle_marker_21a5d5258a058286444e662dbda2aabe = L.circleMarker(
+                [30.31359878836228, -97.83622229577695],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_84de1d1725d7f0f94d6f8d011c721a92 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2e30626cb980b58468e0da6b8e235d8a = $(`<div id="html_2e30626cb980b58468e0da6b8e235d8a" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Medium<br><b>Irradiance:</b> 6.33 kWh/m²/day<br><b>Cloud Cover:</b> 38.1%<br><b>NDBI:</b> 0.31<br><b>NDVI:</b> 0.54<br><b>Elevation:</b> 179.6 m</div>`)[0];
+                popup_84de1d1725d7f0f94d6f8d011c721a92.setContent(html_2e30626cb980b58468e0da6b8e235d8a);
+            
+        
+
+        circle_marker_21a5d5258a058286444e662dbda2aabe.bindPopup(popup_84de1d1725d7f0f94d6f8d011c721a92)
+        ;
+
+        
+    
+    
+            var circle_marker_b896d5bba1b089f50dbd33e707a3ca02 = L.circleMarker(
+                [30.286931696839407, -97.66123591958424],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_696a3067f0af8ce400119032ce475826 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_db18fd5c748860338ae36857a93519f4 = $(`<div id="html_db18fd5c748860338ae36857a93519f4" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> High<br><b>Irradiance:</b> 5.24 kWh/m²/day<br><b>Cloud Cover:</b> 28.3%<br><b>NDBI:</b> 0.83<br><b>NDVI:</b> 0.48<br><b>Elevation:</b> 131.4 m</div>`)[0];
+                popup_696a3067f0af8ce400119032ce475826.setContent(html_db18fd5c748860338ae36857a93519f4);
+            
+        
+
+        circle_marker_b896d5bba1b089f50dbd33e707a3ca02.bindPopup(popup_696a3067f0af8ce400119032ce475826)
+        ;
+
+        
+    
+    
+            var circle_marker_f1d7e0995b9a2c454be443e21cdc77d9 = L.circleMarker(
+                [30.198403728088486, -97.79134400368],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_71e1443f05c402d1d4832efea8dffe3b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c02576d8cc7ff0ad3ce54ee76e4e0b1e = $(`<div id="html_c02576d8cc7ff0ad3ce54ee76e4e0b1e" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> High<br><b>Irradiance:</b> 4.53 kWh/m²/day<br><b>Cloud Cover:</b> 45.2%<br><b>NDBI:</b> 0.62<br><b>NDVI:</b> 0.16<br><b>Elevation:</b> 176.0 m</div>`)[0];
+                popup_71e1443f05c402d1d4832efea8dffe3b.setContent(html_c02576d8cc7ff0ad3ce54ee76e4e0b1e);
+            
+        
+
+        circle_marker_f1d7e0995b9a2c454be443e21cdc77d9.bindPopup(popup_71e1443f05c402d1d4832efea8dffe3b)
+        ;
+
+        
+    
+    
+            var circle_marker_c23a40cbb07dbdcd0dd504416a8e724e = L.circleMarker(
+                [30.19839890406724, -97.7105955431292],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_cf0b9521c37f5d2184710131a0be6058 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_26cd76df5421961940fecaddd068b0b6 = $(`<div id="html_26cd76df5421961940fecaddd068b0b6" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Medium<br><b>Irradiance:</b> 6.36 kWh/m²/day<br><b>Cloud Cover:</b> 26.3%<br><b>NDBI:</b> 0.21<br><b>NDVI:</b> 0.68<br><b>Elevation:</b> 178.5 m</div>`)[0];
+                popup_cf0b9521c37f5d2184710131a0be6058.setContent(html_26cd76df5421961940fecaddd068b0b6);
+            
+        
+
+        circle_marker_c23a40cbb07dbdcd0dd504416a8e724e.bindPopup(popup_cf0b9521c37f5d2184710131a0be6058)
+        ;
+
+        
+    
+    
+            var circle_marker_7ad56dad250ac5ebcfddd89e2dfa255c = L.circleMarker(
+                [30.178816722433638, -97.78075778478211],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_0b532405533e436245f13be90aee9a3f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_67e4050f76bf25c2f680ceeafd7a1b90 = $(`<div id="html_67e4050f76bf25c2f680ceeafd7a1b90" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Medium<br><b>Irradiance:</b> 5.36 kWh/m²/day<br><b>Cloud Cover:</b> 41.3%<br><b>NDBI:</b> 0.27<br><b>NDVI:</b> 0.32<br><b>Elevation:</b> 251.3 m</div>`)[0];
+                popup_0b532405533e436245f13be90aee9a3f.setContent(html_67e4050f76bf25c2f680ceeafd7a1b90);
+            
+        
+
+        circle_marker_7ad56dad250ac5ebcfddd89e2dfa255c.bindPopup(popup_0b532405533e436245f13be90aee9a3f)
+        ;
+
+        
+    
+    
+            var circle_marker_cd1441318ccabfeb2b4dc6a37b5bf645 = L.circleMarker(
+                [30.340435229154988, -97.73908639576443],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_c06245c90a1b312531046432c0a0c03d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5dd5abceb8ce5481cf562db611056b5e = $(`<div id="html_5dd5abceb8ce5481cf562db611056b5e" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Medium<br><b>Irradiance:</b> 6.43 kWh/m²/day<br><b>Cloud Cover:</b> 44.0%<br><b>NDBI:</b> 0.66<br><b>NDVI:</b> 0.23<br><b>Elevation:</b> 234.8 m</div>`)[0];
+                popup_c06245c90a1b312531046432c0a0c03d.setContent(html_5dd5abceb8ce5481cf562db611056b5e);
+            
+        
+
+        circle_marker_cd1441318ccabfeb2b4dc6a37b5bf645.bindPopup(popup_c06245c90a1b312531046432c0a0c03d)
+        ;
+
+        
+    
+    
+            var circle_marker_8f04f09ad1ac80e0d6f82088dd1517d2 = L.circleMarker(
+                [30.287423002348643, -97.73375794413134],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_972f4319f437a5d4fe4765d3aa4fb6e7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1da09013ef2a1f1127b0fd448c893ea6 = $(`<div id="html_1da09013ef2a1f1127b0fd448c893ea6" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Medium<br><b>Irradiance:</b> 6.43 kWh/m²/day<br><b>Cloud Cover:</b> 35.0%<br><b>NDBI:</b> 0.20<br><b>NDVI:</b> 0.13<br><b>Elevation:</b> 279.7 m</div>`)[0];
+                popup_972f4319f437a5d4fe4765d3aa4fb6e7.setContent(html_1da09013ef2a1f1127b0fd448c893ea6);
+            
+        
+
+        circle_marker_8f04f09ad1ac80e0d6f82088dd1517d2.bindPopup(popup_972f4319f437a5d4fe4765d3aa4fb6e7)
+        ;
+
+        
+    
+    
+            var circle_marker_e269f443f359d1e6e4d48f31f2849bd5 = L.circleMarker(
+                [30.30881451555921, -97.8061291088949],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_f29d3345fc586f8a41bba4d616675d1d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_514cddac154f3188c0010791c02d5a5a = $(`<div id="html_514cddac154f3188c0010791c02d5a5a" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Medium<br><b>Irradiance:</b> 6.21 kWh/m²/day<br><b>Cloud Cover:</b> 45.7%<br><b>NDBI:</b> 0.31<br><b>NDVI:</b> 0.51<br><b>Elevation:</b> 205.0 m</div>`)[0];
+                popup_f29d3345fc586f8a41bba4d616675d1d.setContent(html_514cddac154f3188c0010791c02d5a5a);
+            
+        
+
+        circle_marker_e269f443f359d1e6e4d48f31f2849bd5.bindPopup(popup_f29d3345fc586f8a41bba4d616675d1d)
+        ;
+
+        
+    
+    
+            var circle_marker_8d6908d2aa1885c590391c2fdba081cb = L.circleMarker(
+                [30.171316898859157, -97.6491830744471],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_c4f75cf5d7b1989df53d97a11a3bc36b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_028b7b58f803d30f2dd4e64aec3f1bbe = $(`<div id="html_028b7b58f803d30f2dd4e64aec3f1bbe" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> High<br><b>Irradiance:</b> 5.09 kWh/m²/day<br><b>Cloud Cover:</b> 26.1%<br><b>NDBI:</b> 0.58<br><b>NDVI:</b> 0.57<br><b>Elevation:</b> 141.5 m</div>`)[0];
+                popup_c4f75cf5d7b1989df53d97a11a3bc36b.setContent(html_028b7b58f803d30f2dd4e64aec3f1bbe);
+            
+        
+
+        circle_marker_8d6908d2aa1885c590391c2fdba081cb.bindPopup(popup_c4f75cf5d7b1989df53d97a11a3bc36b)
+        ;
+
+        
+    
+    
+            var circle_marker_a4f94f157af9d6791254255c999eaaed = L.circleMarker(
+                [30.361181970432398, -97.68807343532778],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_6e74039c5644429f275948cbd65af66d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_10ac9a03336a2b6e85913d8c767a78d6 = $(`<div id="html_10ac9a03336a2b6e85913d8c767a78d6" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> High<br><b>Irradiance:</b> 5.27 kWh/m²/day<br><b>Cloud Cover:</b> 26.3%<br><b>NDBI:</b> 0.68<br><b>NDVI:</b> 0.11<br><b>Elevation:</b> 248.4 m</div>`)[0];
+                popup_6e74039c5644429f275948cbd65af66d.setContent(html_10ac9a03336a2b6e85913d8c767a78d6);
+            
+        
+
+        circle_marker_a4f94f157af9d6791254255c999eaaed.bindPopup(popup_6e74039c5644429f275948cbd65af66d)
+        ;
+
+        
+    
+    
+            var circle_marker_b534d166ca1057221929256a3956eaad = L.circleMarker(
+                [30.333688528160085, -97.65520021168716],
+                {"bubblingMouseEvents": true, "color": "lightgray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_239438502d3df5d33de44e862cb69686 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9c311c9868f918c344d0c87e7b116f87 = $(`<div id="html_9c311c9868f918c344d0c87e7b116f87" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Low<br><b>Irradiance:</b> 6.20 kWh/m²/day<br><b>Cloud Cover:</b> 53.8%<br><b>NDBI:</b> 0.66<br><b>NDVI:</b> 0.46<br><b>Elevation:</b> 256.9 m</div>`)[0];
+                popup_239438502d3df5d33de44e862cb69686.setContent(html_9c311c9868f918c344d0c87e7b116f87);
+            
+        
+
+        circle_marker_b534d166ca1057221929256a3956eaad.bindPopup(popup_239438502d3df5d33de44e862cb69686)
+        ;
+
+        
+    
+    
+            var circle_marker_ee0426d459e4b18e8adbb89ebfd56750 = L.circleMarker(
+                [30.209667822135653, -97.66413452991448],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_4e2b44f834daaf1980f40ecce1c01d04 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_67679b96d0621d24a187d754e1d53daf = $(`<div id="html_67679b96d0621d24a187d754e1d53daf" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> High<br><b>Irradiance:</b> 5.13 kWh/m²/day<br><b>Cloud Cover:</b> 37.6%<br><b>NDBI:</b> 0.36<br><b>NDVI:</b> 0.26<br><b>Elevation:</b> 221.0 m</div>`)[0];
+                popup_4e2b44f834daaf1980f40ecce1c01d04.setContent(html_67679b96d0621d24a187d754e1d53daf);
+            
+        
+
+        circle_marker_ee0426d459e4b18e8adbb89ebfd56750.bindPopup(popup_4e2b44f834daaf1980f40ecce1c01d04)
+        ;
+
+        
+    
+    
+            var circle_marker_8eb5022a9e5b3316b24169e15e54bfb3 = L.circleMarker(
+                [30.203564993441418, -97.72352000423778],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_4c0ca7f992be8df87ff87f36b586b857 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_76d912fae1e77e1f493eb88e387623ba = $(`<div id="html_76d912fae1e77e1f493eb88e387623ba" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> High<br><b>Irradiance:</b> 4.84 kWh/m²/day<br><b>Cloud Cover:</b> 29.4%<br><b>NDBI:</b> 0.70<br><b>NDVI:</b> 0.55<br><b>Elevation:</b> 258.8 m</div>`)[0];
+                popup_4c0ca7f992be8df87ff87f36b586b857.setContent(html_76d912fae1e77e1f493eb88e387623ba);
+            
+        
+
+        circle_marker_8eb5022a9e5b3316b24169e15e54bfb3.bindPopup(popup_4c0ca7f992be8df87ff87f36b586b857)
+        ;
+
+        
+    
+    
+            var circle_marker_2cbbdfaad46dc8f3f82e1b464b19c859 = L.circleMarker(
+                [30.203880901970685, -97.65872515299537],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_0778c259593603d06b39e8f479869e33 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b745a8c5ef739c98dfc48c5a2a35d1d0 = $(`<div id="html_b745a8c5ef739c98dfc48c5a2a35d1d0" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Medium<br><b>Irradiance:</b> 5.61 kWh/m²/day<br><b>Cloud Cover:</b> 43.3%<br><b>NDBI:</b> 0.37<br><b>NDVI:</b> 0.22<br><b>Elevation:</b> 208.9 m</div>`)[0];
+                popup_0778c259593603d06b39e8f479869e33.setContent(html_b745a8c5ef739c98dfc48c5a2a35d1d0);
+            
+        
+
+        circle_marker_2cbbdfaad46dc8f3f82e1b464b19c859.bindPopup(popup_0778c259593603d06b39e8f479869e33)
+        ;
+
+        
+    
+    
+            var circle_marker_6182a9a5ae750c001df21f89ffa5495f = L.circleMarker(
+                [30.228048448591906, -97.8254014995896],
+                {"bubblingMouseEvents": true, "color": "lightgray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_4fac719ff7a976c7583bfd5531304dbf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_42c18be90fc5cece2bbfe8a42d3bdb71 = $(`<div id="html_42c18be90fc5cece2bbfe8a42d3bdb71" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Low<br><b>Irradiance:</b> 6.37 kWh/m²/day<br><b>Cloud Cover:</b> 51.9%<br><b>NDBI:</b> 0.43<br><b>NDVI:</b> 0.58<br><b>Elevation:</b> 214.1 m</div>`)[0];
+                popup_4fac719ff7a976c7583bfd5531304dbf.setContent(html_42c18be90fc5cece2bbfe8a42d3bdb71);
+            
+        
+
+        circle_marker_6182a9a5ae750c001df21f89ffa5495f.bindPopup(popup_4fac719ff7a976c7583bfd5531304dbf)
+        ;
+
+        
+    
+    
+            var circle_marker_080b5d54f44c77a01219e28e8d619f1e = L.circleMarker(
+                [30.272151286326448, -97.80390342751616],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_86bf6ab85317c3bf7b6f6b2fb32b82f6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_72b8d5957859ae1d3e6b9671492e131c = $(`<div id="html_72b8d5957859ae1d3e6b9671492e131c" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> High<br><b>Irradiance:</b> 5.89 kWh/m²/day<br><b>Cloud Cover:</b> 32.6%<br><b>NDBI:</b> 0.72<br><b>NDVI:</b> 0.37<br><b>Elevation:</b> 197.0 m</div>`)[0];
+                popup_86bf6ab85317c3bf7b6f6b2fb32b82f6.setContent(html_72b8d5957859ae1d3e6b9671492e131c);
+            
+        
+
+        circle_marker_080b5d54f44c77a01219e28e8d619f1e.bindPopup(popup_86bf6ab85317c3bf7b6f6b2fb32b82f6)
+        ;
+
+        
+    
+    
+            var circle_marker_6a669954656ab9f6d6122e57dad328c7 = L.circleMarker(
+                [30.253589003728422, -97.83405454221788],
+                {"bubblingMouseEvents": true, "color": "lightgray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_cbb0684c0c58e25e6de3d1aa1e2fb113 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fa8cc3ea0f7d0d8be31679fdc221c8cf = $(`<div id="html_fa8cc3ea0f7d0d8be31679fdc221c8cf" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Low<br><b>Irradiance:</b> 5.64 kWh/m²/day<br><b>Cloud Cover:</b> 46.8%<br><b>NDBI:</b> 0.65<br><b>NDVI:</b> 0.76<br><b>Elevation:</b> 124.6 m</div>`)[0];
+                popup_cbb0684c0c58e25e6de3d1aa1e2fb113.setContent(html_fa8cc3ea0f7d0d8be31679fdc221c8cf);
+            
+        
+
+        circle_marker_6a669954656ab9f6d6122e57dad328c7.bindPopup(popup_cbb0684c0c58e25e6de3d1aa1e2fb113)
+        ;
+
+        
+    
+    
+            var circle_marker_55867b727b33cc1b9e926a6436362a26 = L.circleMarker(
+                [30.225445828039607, -97.77803393384734],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_a4dac23d5cb4f539ccad329d183eb9b3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f2d6897e65f117be17db66100b3b14a4 = $(`<div id="html_f2d6897e65f117be17db66100b3b14a4" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> High<br><b>Irradiance:</b> 4.69 kWh/m²/day<br><b>Cloud Cover:</b> 28.0%<br><b>NDBI:</b> 0.79<br><b>NDVI:</b> 0.20<br><b>Elevation:</b> 139.4 m</div>`)[0];
+                popup_a4dac23d5cb4f539ccad329d183eb9b3.setContent(html_f2d6897e65f117be17db66100b3b14a4);
+            
+        
+
+        circle_marker_55867b727b33cc1b9e926a6436362a26.bindPopup(popup_a4dac23d5cb4f539ccad329d183eb9b3)
+        ;
+
+        
+    
+    
+            var circle_marker_824e0f076920e1133b42031f0c1e8f6e = L.circleMarker(
+                [30.289570578944474, -97.7653645420621],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_4b3fd7203611c2b232e3a5747f877efe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1f47cf96b4fc56d0bae32bc8cc693c76 = $(`<div id="html_1f47cf96b4fc56d0bae32bc8cc693c76" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> High<br><b>Irradiance:</b> 5.73 kWh/m²/day<br><b>Cloud Cover:</b> 26.8%<br><b>NDBI:</b> 0.66<br><b>NDVI:</b> 0.34<br><b>Elevation:</b> 125.7 m</div>`)[0];
+                popup_4b3fd7203611c2b232e3a5747f877efe.setContent(html_1f47cf96b4fc56d0bae32bc8cc693c76);
+            
+        
+
+        circle_marker_824e0f076920e1133b42031f0c1e8f6e.bindPopup(popup_4b3fd7203611c2b232e3a5747f877efe)
+        ;
+
+        
+    
+    
+            var circle_marker_e938bf477e715d6883f68cbe0b84d2e2 = L.circleMarker(
+                [30.195098772130407, -97.78883019364521],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_d1cd8be4d45a9bcb281634fc24e55279 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bf4f8c3eedaa12ac8c2d9ee59d4dd83d = $(`<div id="html_bf4f8c3eedaa12ac8c2d9ee59d4dd83d" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Medium<br><b>Irradiance:</b> 6.48 kWh/m²/day<br><b>Cloud Cover:</b> 43.6%<br><b>NDBI:</b> 0.60<br><b>NDVI:</b> 0.18<br><b>Elevation:</b> 234.6 m</div>`)[0];
+                popup_d1cd8be4d45a9bcb281634fc24e55279.setContent(html_bf4f8c3eedaa12ac8c2d9ee59d4dd83d);
+            
+        
+
+        circle_marker_e938bf477e715d6883f68cbe0b84d2e2.bindPopup(popup_d1cd8be4d45a9bcb281634fc24e55279)
+        ;
+
+        
+    
+    
+            var circle_marker_e27419be5432fc4af027491d6eedb023 = L.circleMarker(
+                [30.225628929707042, -97.67735249816961],
+                {"bubblingMouseEvents": true, "color": "lightgray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_4215980e12ebdc32fd128283c69602d7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_84bded3aee4028e498c9a7431eb68617 = $(`<div id="html_84bded3aee4028e498c9a7431eb68617" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Low<br><b>Irradiance:</b> 4.78 kWh/m²/day<br><b>Cloud Cover:</b> 43.9%<br><b>NDBI:</b> 0.27<br><b>NDVI:</b> 0.75<br><b>Elevation:</b> 176.6 m</div>`)[0];
+                popup_4215980e12ebdc32fd128283c69602d7.setContent(html_84bded3aee4028e498c9a7431eb68617);
+            
+        
+
+        circle_marker_e27419be5432fc4af027491d6eedb023.bindPopup(popup_4215980e12ebdc32fd128283c69602d7)
+        ;
+
+        
+    
+    
+            var circle_marker_462c78b3cc01bf87c1ecbbdf1f070dab = L.circleMarker(
+                [30.240472368658736, -97.77174933466128],
+                {"bubblingMouseEvents": true, "color": "lightgray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_90aaad83af5b45b723c17aee0be227ea = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2a2d89f3145a1bb6598a32277b7c97a1 = $(`<div id="html_2a2d89f3145a1bb6598a32277b7c97a1" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Low<br><b>Irradiance:</b> 5.54 kWh/m²/day<br><b>Cloud Cover:</b> 47.3%<br><b>NDBI:</b> 0.46<br><b>NDVI:</b> 0.71<br><b>Elevation:</b> 211.5 m</div>`)[0];
+                popup_90aaad83af5b45b723c17aee0be227ea.setContent(html_2a2d89f3145a1bb6598a32277b7c97a1);
+            
+        
+
+        circle_marker_462c78b3cc01bf87c1ecbbdf1f070dab.bindPopup(popup_90aaad83af5b45b723c17aee0be227ea)
+        ;
+
+        
+    
+    
+            var circle_marker_31acea21981169c08444acd7f91074ce = L.circleMarker(
+                [30.258413996843405, -97.78691309806251],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_04941e25236611895c8455404dab708d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0bd760e4d069d0fd8c6236fa8425722e = $(`<div id="html_0bd760e4d069d0fd8c6236fa8425722e" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Medium<br><b>Irradiance:</b> 6.25 kWh/m²/day<br><b>Cloud Cover:</b> 50.4%<br><b>NDBI:</b> 0.39<br><b>NDVI:</b> 0.28<br><b>Elevation:</b> 283.4 m</div>`)[0];
+                popup_04941e25236611895c8455404dab708d.setContent(html_0bd760e4d069d0fd8c6236fa8425722e);
+            
+        
+
+        circle_marker_31acea21981169c08444acd7f91074ce.bindPopup(popup_04941e25236611895c8455404dab708d)
+        ;
+
+        
+    
+    
+            var circle_marker_5b1f38ef50f9996524f9d5440459f1ac = L.circleMarker(
+                [30.324235192278604, -97.73456078336835],
+                {"bubblingMouseEvents": true, "color": "lightgray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_6b095e1872f946a16fcf94e94adefdc6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_20009c6086a8853c14f0cc2660d976b2 = $(`<div id="html_20009c6086a8853c14f0cc2660d976b2" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Low<br><b>Irradiance:</b> 5.98 kWh/m²/day<br><b>Cloud Cover:</b> 59.2%<br><b>NDBI:</b> 0.37<br><b>NDVI:</b> 0.56<br><b>Elevation:</b> 164.9 m</div>`)[0];
+                popup_6b095e1872f946a16fcf94e94adefdc6.setContent(html_20009c6086a8853c14f0cc2660d976b2);
+            
+        
+
+        circle_marker_5b1f38ef50f9996524f9d5440459f1ac.bindPopup(popup_6b095e1872f946a16fcf94e94adefdc6)
+        ;
+
+        
+    
+    
+            var circle_marker_4e3610a864983a1411237eb27d21eb3b = L.circleMarker(
+                [30.20713475643167, -97.81491515500504],
+                {"bubblingMouseEvents": true, "color": "lightgray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_3d2ee973e0ef06f087e03cd1c95df44e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c9f58f9b62a076f1c68d2831f4571adc = $(`<div id="html_c9f58f9b62a076f1c68d2831f4571adc" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Low<br><b>Irradiance:</b> 5.89 kWh/m²/day<br><b>Cloud Cover:</b> 43.1%<br><b>NDBI:</b> 0.88<br><b>NDVI:</b> 0.67<br><b>Elevation:</b> 193.9 m</div>`)[0];
+                popup_3d2ee973e0ef06f087e03cd1c95df44e.setContent(html_c9f58f9b62a076f1c68d2831f4571adc);
+            
+        
+
+        circle_marker_4e3610a864983a1411237eb27d21eb3b.bindPopup(popup_3d2ee973e0ef06f087e03cd1c95df44e)
+        ;
+
+        
+    
+    
+            var circle_marker_9146031e42ba3744390bab640135cbc0 = L.circleMarker(
+                [30.27004688768272, -97.6826606038492],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_e1231cbbcf45815e35f09c9b01202837 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1223225cd76da0ae48ef879fb86d6c34 = $(`<div id="html_1223225cd76da0ae48ef879fb86d6c34" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Medium<br><b>Irradiance:</b> 5.90 kWh/m²/day<br><b>Cloud Cover:</b> 36.3%<br><b>NDBI:</b> 0.48<br><b>NDVI:</b> 0.49<br><b>Elevation:</b> 256.0 m</div>`)[0];
+                popup_e1231cbbcf45815e35f09c9b01202837.setContent(html_1223225cd76da0ae48ef879fb86d6c34);
+            
+        
+
+        circle_marker_9146031e42ba3744390bab640135cbc0.bindPopup(popup_e1231cbbcf45815e35f09c9b01202837)
+        ;
+
+        
+    
+    
+            var circle_marker_f90ec001eb2e8438735875dd7b99f228 = L.circleMarker(
+                [30.28568291377241, -97.82818987126404],
+                {"bubblingMouseEvents": true, "color": "lightgray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_c37e9adb15d04f6cf4b09dcb28a97198 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_989c9095158ddf3d3e30dc9f37473325 = $(`<div id="html_989c9095158ddf3d3e30dc9f37473325" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Low<br><b>Irradiance:</b> 5.22 kWh/m²/day<br><b>Cloud Cover:</b> 52.8%<br><b>NDBI:</b> 0.82<br><b>NDVI:</b> 0.47<br><b>Elevation:</b> 161.2 m</div>`)[0];
+                popup_c37e9adb15d04f6cf4b09dcb28a97198.setContent(html_989c9095158ddf3d3e30dc9f37473325);
+            
+        
+
+        circle_marker_f90ec001eb2e8438735875dd7b99f228.bindPopup(popup_c37e9adb15d04f6cf4b09dcb28a97198)
+        ;
+
+        
+    
+    
+            var circle_marker_24682c5be07e4896ec67dddc7621acdb = L.circleMarker(
+                [30.176490082543996, -97.6457226126799],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_53feeae5b8c095330d34c22e9536e715 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_26d325943b582b371772850f614547f5 = $(`<div id="html_26d325943b582b371772850f614547f5" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> High<br><b>Irradiance:</b> 5.09 kWh/m²/day<br><b>Cloud Cover:</b> 34.5%<br><b>NDBI:</b> 0.64<br><b>NDVI:</b> 0.27<br><b>Elevation:</b> 133.9 m</div>`)[0];
+                popup_53feeae5b8c095330d34c22e9536e715.setContent(html_26d325943b582b371772850f614547f5);
+            
+        
+
+        circle_marker_24682c5be07e4896ec67dddc7621acdb.bindPopup(popup_53feeae5b8c095330d34c22e9536e715)
+        ;
+
+        
+    
+    
+            var circle_marker_9eb695f08251440edab0de354e51f052 = L.circleMarker(
+                [30.288708970380288, -97.68865104614066],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_329642d1c4dfc2f6bbe55f4da2fb186d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_86d52e2a214acd144443879e4439e2f8 = $(`<div id="html_86d52e2a214acd144443879e4439e2f8" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> High<br><b>Irradiance:</b> 6.12 kWh/m²/day<br><b>Cloud Cover:</b> 40.4%<br><b>NDBI:</b> 0.76<br><b>NDVI:</b> 0.17<br><b>Elevation:</b> 172.2 m</div>`)[0];
+                popup_329642d1c4dfc2f6bbe55f4da2fb186d.setContent(html_86d52e2a214acd144443879e4439e2f8);
+            
+        
+
+        circle_marker_9eb695f08251440edab0de354e51f052.bindPopup(popup_329642d1c4dfc2f6bbe55f4da2fb186d)
+        ;
+
+        
+    
+    
+            var circle_marker_c26777776c78aa49ae1c02ae8e8f6cfa = L.circleMarker(
+                [30.201304824737456, -97.80335686369315],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_882dccfc442e82b8700cf5a5b857f9fa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ee76ab666bc42537df3c354a75d9bd5d = $(`<div id="html_ee76ab666bc42537df3c354a75d9bd5d" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Medium<br><b>Irradiance:</b> 6.12 kWh/m²/day<br><b>Cloud Cover:</b> 27.7%<br><b>NDBI:</b> 0.55<br><b>NDVI:</b> 0.73<br><b>Elevation:</b> 149.0 m</div>`)[0];
+                popup_882dccfc442e82b8700cf5a5b857f9fa.setContent(html_ee76ab666bc42537df3c354a75d9bd5d);
+            
+        
+
+        circle_marker_c26777776c78aa49ae1c02ae8e8f6cfa.bindPopup(popup_882dccfc442e82b8700cf5a5b857f9fa)
+        ;
+
+        
+    
+    
+            var circle_marker_5ccd89683fb17f50d5b414c6ba314626 = L.circleMarker(
+                [30.180210318597055, -97.84199557657527],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_6c66c63913b7d2824edf3b731efe6053 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_11a56d9f5a6067be1a3ba3cff7a3b14f = $(`<div id="html_11a56d9f5a6067be1a3ba3cff7a3b14f" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Medium<br><b>Irradiance:</b> 6.23 kWh/m²/day<br><b>Cloud Cover:</b> 25.9%<br><b>NDBI:</b> 0.60<br><b>NDVI:</b> 0.73<br><b>Elevation:</b> 287.3 m</div>`)[0];
+                popup_6c66c63913b7d2824edf3b731efe6053.setContent(html_11a56d9f5a6067be1a3ba3cff7a3b14f);
+            
+        
+
+        circle_marker_5ccd89683fb17f50d5b414c6ba314626.bindPopup(popup_6c66c63913b7d2824edf3b731efe6053)
+        ;
+
+        
+    
+    
+            var circle_marker_035d4ed73485b7c905e2ce0895ff4bba = L.circleMarker(
+                [30.356977107450668, -97.68000771430904],
+                {"bubblingMouseEvents": true, "color": "lightgray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_0d26b5060033e3196a3aecf4359b6b67 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6184c58405b705f7697d59534b83032f = $(`<div id="html_6184c58405b705f7697d59534b83032f" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Low<br><b>Irradiance:</b> 6.33 kWh/m²/day<br><b>Cloud Cover:</b> 58.7%<br><b>NDBI:</b> 0.54<br><b>NDVI:</b> 0.54<br><b>Elevation:</b> 265.5 m</div>`)[0];
+                popup_0d26b5060033e3196a3aecf4359b6b67.setContent(html_6184c58405b705f7697d59534b83032f);
+            
+        
+
+        circle_marker_035d4ed73485b7c905e2ce0895ff4bba.bindPopup(popup_0d26b5060033e3196a3aecf4359b6b67)
+        ;
+
+        
+    
+    
+            var circle_marker_e3f336aeb6c9bf9b7dfb0ddc7c8b2301 = L.circleMarker(
+                [30.360326406614913, -97.70172853123047],
+                {"bubblingMouseEvents": true, "color": "lightgray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_abd5bde738071190d9b184be2820bdd2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2875c9257ba2631f2fd5f3903bae15a5 = $(`<div id="html_2875c9257ba2631f2fd5f3903bae15a5" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Low<br><b>Irradiance:</b> 5.52 kWh/m²/day<br><b>Cloud Cover:</b> 54.3%<br><b>NDBI:</b> 0.34<br><b>NDVI:</b> 0.34<br><b>Elevation:</b> 234.0 m</div>`)[0];
+                popup_abd5bde738071190d9b184be2820bdd2.setContent(html_2875c9257ba2631f2fd5f3903bae15a5);
+            
+        
+
+        circle_marker_e3f336aeb6c9bf9b7dfb0ddc7c8b2301.bindPopup(popup_abd5bde738071190d9b184be2820bdd2)
+        ;
+
+        
+    
+    
+            var circle_marker_b6db38a79b969f972d741e4eed78fba6 = L.circleMarker(
+                [30.328879469623292, -97.69729856639181],
+                {"bubblingMouseEvents": true, "color": "lightgray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_ac5b87b9d8c96fe25205a7a8fa374a33 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_952e9824029689cf44f7fe0cfd43afad = $(`<div id="html_952e9824029689cf44f7fe0cfd43afad" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Low<br><b>Irradiance:</b> 5.50 kWh/m²/day<br><b>Cloud Cover:</b> 49.4%<br><b>NDBI:</b> 0.71<br><b>NDVI:</b> 0.34<br><b>Elevation:</b> 276.9 m</div>`)[0];
+                popup_ac5b87b9d8c96fe25205a7a8fa374a33.setContent(html_952e9824029689cf44f7fe0cfd43afad);
+            
+        
+
+        circle_marker_b6db38a79b969f972d741e4eed78fba6.bindPopup(popup_ac5b87b9d8c96fe25205a7a8fa374a33)
+        ;
+
+        
+    
+    
+            var circle_marker_9d4eec6d3ffc2a2499c6b4149003f835 = L.circleMarker(
+                [30.228122753834672, -97.68884593066281],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_078f856c621c2ba2152ca862d7f8b9ea = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9d2f685e14c1037faa5a1cf322aa6f7e = $(`<div id="html_9d2f685e14c1037faa5a1cf322aa6f7e" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Medium<br><b>Irradiance:</b> 6.10 kWh/m²/day<br><b>Cloud Cover:</b> 39.3%<br><b>NDBI:</b> 0.40<br><b>NDVI:</b> 0.61<br><b>Elevation:</b> 264.7 m</div>`)[0];
+                popup_078f856c621c2ba2152ca862d7f8b9ea.setContent(html_9d2f685e14c1037faa5a1cf322aa6f7e);
+            
+        
+
+        circle_marker_9d4eec6d3ffc2a2499c6b4149003f835.bindPopup(popup_078f856c621c2ba2152ca862d7f8b9ea)
+        ;
+
+        
+    
+    
+            var circle_marker_29438165d68343619a8652d247b0b763 = L.circleMarker(
+                [30.186734422801276, -97.82829106965318],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_246726b2ceda25ff4ed53844c6c15007 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fe6caa7b30b687a86747a9bc799cde0d = $(`<div id="html_fe6caa7b30b687a86747a9bc799cde0d" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Medium<br><b>Irradiance:</b> 5.80 kWh/m²/day<br><b>Cloud Cover:</b> 31.1%<br><b>NDBI:</b> 0.22<br><b>NDVI:</b> 0.73<br><b>Elevation:</b> 153.6 m</div>`)[0];
+                popup_246726b2ceda25ff4ed53844c6c15007.setContent(html_fe6caa7b30b687a86747a9bc799cde0d);
+            
+        
+
+        circle_marker_29438165d68343619a8652d247b0b763.bindPopup(popup_246726b2ceda25ff4ed53844c6c15007)
+        ;
+
+        
+    
+    
+            var circle_marker_edf98ef5e5f7084ed8183edcab4f05b7 = L.circleMarker(
+                [30.30404660530243, -97.77140685429114],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_8f92c56dc25fce6acf6f0f863d0c43b7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dbb9f46341cccddef0989b26faf22ba3 = $(`<div id="html_dbb9f46341cccddef0989b26faf22ba3" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Medium<br><b>Irradiance:</b> 5.90 kWh/m²/day<br><b>Cloud Cover:</b> 30.5%<br><b>NDBI:</b> 0.65<br><b>NDVI:</b> 0.72<br><b>Elevation:</b> 280.7 m</div>`)[0];
+                popup_8f92c56dc25fce6acf6f0f863d0c43b7.setContent(html_dbb9f46341cccddef0989b26faf22ba3);
+            
+        
+
+        circle_marker_edf98ef5e5f7084ed8183edcab4f05b7.bindPopup(popup_8f92c56dc25fce6acf6f0f863d0c43b7)
+        ;
+
+        
+    
+    
+            var circle_marker_464164a3dd28edf6f4b5020171fd8ce9 = L.circleMarker(
+                [30.25523049874792, -97.81992618809497],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_860edb9f1bb4ca736cd16a72f02098ff);
+        
+    
+        var popup_42fde57fc78e6f3ff38776845ccadbb0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_560094c321d321da30012f98723caf0e = $(`<div id="html_560094c321d321da30012f98723caf0e" style="width: 100.0%; height: 100.0%;"><b>Solar Potential:</b> Medium<br><b>Irradiance:</b> 6.09 kWh/m²/day<br><b>Cloud Cover:</b> 33.8%<br><b>NDBI:</b> 0.32<br><b>NDVI:</b> 0.65<br><b>Elevation:</b> 217.1 m</div>`)[0];
+                popup_42fde57fc78e6f3ff38776845ccadbb0.setContent(html_560094c321d321da30012f98723caf0e);
+            
+        
+
+        circle_marker_464164a3dd28edf6f4b5020171fd8ce9.bindPopup(popup_42fde57fc78e6f3ff38776845ccadbb0)
+        ;
+
+        
+    
+</script>
+</html>
