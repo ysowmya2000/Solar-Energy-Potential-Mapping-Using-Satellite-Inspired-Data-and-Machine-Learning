@@ -1,0 +1,1 @@
+# Solar-Energy-Potential-Mapping-Using-Satellite-Inspired-Data-and-Machine-Learning
